@@ -1,79 +1,79 @@
 <template>
   <main class="card-books">
-    <div class="card" style="width: 18rem">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-danger">Excluir</a>
+    <div class="row">
+      <div class="card">
+        <h2>Monetização</h2>
+        <p>Configure a monetização</p>
+        <img class="image" src="" alt="livro" />
+        <div class="btnlivro">
+          <button type="button" class="btn btn-outline-danger">Excluir</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card" style="width: 18rem">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-danger">Excluir</a>
+      <div class="card">
+        <h2>Artigos</h2>
+        <p>Crie e edite artigos</p>
+        <img class="image" src="" alt="livro" />
+        <div class="btnlivro">
+          <button type="button" class="btn btn-outline-danger">Excluir</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card" style="width: 18rem">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-danger">Excluir</a>
+      <div class="card">
+        <h2>Monetização</h2>
+        <p>Configure a monetização</p>
+        <img class="image" src="" alt="livro" />
+        <div class="btnlivro">
+          <button type="button" class="btn btn-outline-danger">Excluir</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card" style="width: 18rem">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-danger">Excluir</a>
+      <div class="card">
+        <h2>Monetização</h2>
+        <p>Configure a monetização</p>
+        <img class="image" src="" alt="livro" />
+        <div class="btnlivro">
+          <button type="button" class="btn btn-outline-danger">Excluir</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card" style="width: 18rem">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-danger">Excluir</a>
+      <div class="card">
+        <h2>Artigos</h2>
+        <p>Crie e edite artigos</p>
+        <img class="image" src="" alt="livro" />
+        <div class="btnlivro">
+          <button type="button" class="btn btn-outline-danger">Excluir</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card" style="width: 18rem">
-      <img src="..." class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-danger">Excluir</a>
+      <div class="card">
+        <h2>Monetização</h2>
+        <p>Configure a monetização</p>
+        <img class="image" src="" alt="livro" />
+        <div class="btnlivro">
+          <button type="button" class="btn btn-outline-danger">Excluir</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Artigos</h2>
+        <p>Crie e edite artigos</p>
+        <img class="image" src="" alt="livro" />
+        <div class="btnlivro">
+          <button type="button" class="btn btn-outline-danger">Excluir</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Artigos</h2>
+        <p>Crie e edite artigos</p>
+        <img class="image" src="" alt="livro" />
+        <div class="btnlivro">
+          <button type="button" class="btn btn-outline-danger">Excluir</button>
+        </div>
       </div>
     </div>
   </main>
-
-  
 </template>
 
 <style>
@@ -82,9 +82,38 @@
   margin: 50px;
 }
 
-.card{
- margin: 1%;
- background-color: #D9D9D9;
+.card {
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+  padding: 30px;
+  margin: 20px;
+  width: 400px;
+  transition: all 0.3s ease-out;
 }
- 
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.card p {
+  color: #a3a5ae;
+  font-size: 16px;
+}
+
+.image {
+  float: right;
+  max-width: 64px;
+  max-height: 64px;
+}
+.btnlivro {
+  right: inherit;
+}
 </style>

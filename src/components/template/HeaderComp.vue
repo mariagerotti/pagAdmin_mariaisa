@@ -1,20 +1,6 @@
 <template>
   <header>
     <div class="menu-header">
-      <!-- Image and text 
-      <nav class="navbar navbar-light">
-        <a class="navbar-brand" href="#">
-          <img
-            src="/docs/4.2/assets/brand/bootstrap-solid.svg"
-            width="30"
-            height="30"
-            class="d-inline-block align-top"
-            alt=""
-          />
-          Bootstrap
-        </a>
-      </nav>-->
-
       <span> <RouterLink to="/">HOME</RouterLink> </span>
 
       <span> <RouterLink to="/livros">LIVROS</RouterLink> </span>
@@ -26,22 +12,6 @@
       <span> <RouterLink to="/categorias">CATEGORIAS</RouterLink> </span>
     </div>
   </header>
-
-  <div class="search-bar">
-    <nav class="navbar navbar-light">
-      <form class="form-inline">
-        <input
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="Adicionar"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
-          +
-        </button>
-      </form>
-    </nav>
-  </div>
 </template>
 
 <style>

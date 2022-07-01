@@ -1,52 +1,110 @@
+<script>
+import { v4 as uuidv4 } from "uuid";
+export default {
+  data() {
+    return {
+      autor: [
+        {
+          id: "01986caa-0a42-4eef-9d11-25c77fd98df1",
+          nome: "O Homem de Giz",
+        },
+        {
+          id: "fd358753-5c5b-458b-afe4-c321742f6b86",
+          nome: "Orgulho e Preconceito",
+        },
+        {
+          id: "1da71c33-6bb4-4ba0-9f04-8c55a132df79",
+          nome: "1984",
+        },
+        {
+          id: "7576dc1a-9815-4b1c-9b9a-91416f76070a",
+          nome: "Moby Dick",
+        },
+        {
+          id: "77902653-9726-4977-9367-1000a3c2181a",
+          nome: "A Divina Comédia",
+        },
+      ],
+      novo_autor: {
+        id: "",
+        nome: "",
+      },
+    };
+  },
+  methods: {
+    salvar() {
+      if (this.novo_autor.nome !== "") {
+        this.novo_autor.id = uuidv4();
+        this.autor.push(this.novo_autor);
+        this.novo_autor = {
+          id: "",
+          nome: "",
+
+        };
+      }
+    },
+    excluir(autor) {
+      const indice = this.autor.indexOf(autor);
+      this.autor.splice(indice, 1);
+    },
+  },
+};
+</script>
+
 <template>
-  <main class="table-autor">
-    <table class="table table-dark">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Obra</th>
-          <th scope="col">ISBN</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+  <main>
+    <div class="container">
+      <div class="form-input">
+        <input
+          type="text"
+          v-model="novo_autor.nome"
+          placeholder="Nome do Autor"
+        />
+        <button @click="salvar">Salvar</button>
+      </div>
+      <div class="list-books">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome do Autor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="autor in autor" :key="autor.id">
+              <td>{{ autor.id }}</td>
+              <td>{{ autor.nome }}</td>
+              <td>
+                <button>editar</button>
+                <button @click="excluir(autor)">excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </main>
 </template>
 
 <style>
-.table-autor{
-    margin: 18px;
+.list-books {
+  display: flex;
+  justify-content: center;
+}
+.list-books table {
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+table tr td {
+  border: 1px solid rgb(211, 211, 211);
+  padding: 10px;
+}
+
+.form-input input {
+  border-radius: 7px;
+}
+
+button {
+  border-radius: 5px;
 }
 </style>

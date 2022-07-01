@@ -133,7 +133,6 @@ export default {
             <tr v-for="livro in livros" :key="livro.id">
               <td>{{ livro.id }}</td>
               <td>{{ livro.titulo }}</td>
-
               <td>{{ livro.isbn }}</td>
               <td>{{ livro.categoria_id }}</td>
               <td>{{ livro.editora_id }}</td>
@@ -155,13 +154,24 @@ export default {
 .list-books {
   display: flex;
   justify-content: center;
+
 }
 .list-books table {
   margin: 0 auto;
   border-collapse: collapse;
+  
 }
 table tr td {
   border: 1px solid rgb(211, 211, 211);
   padding: 10px;
+}
+
+.form-input input{
+  border-radius: 7px;
+  
+}
+
+button{
+  border-radius: 5px;
 }
 </style>

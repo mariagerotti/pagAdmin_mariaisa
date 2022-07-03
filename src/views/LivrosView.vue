@@ -7,7 +7,7 @@ export default {
         {
           id: "01986caa-0a42-4eef-9d11-25c77fd98df1",
           titulo: "O Homem de Giz",
-          isbn: "9783442489398",
+          ISBN: "9783442489398",
           categoria_id: "cd39786b-0a5c-4378-8dbb-ba15f266cb5b",
           editora_id: "dc40599e-56e5-492b-8b96-26a2a39ce7f1",
           quantidade: "90",
@@ -16,7 +16,7 @@ export default {
         {
           id: "fd358753-5c5b-458b-afe4-c321742f6b86",
           titulo: "Orgulho e Preconceito",
-          isbn: "9783959390859",
+          ISBN: "9783959390859",
           categoria_id: "1a14add5-c7ff-41e4-9422-1f2bbe6dd129",
           editora_id: "9f3ce3be-8168-4daf-a374-f71891a880f5",
           quantidade: "68",
@@ -25,7 +25,7 @@ export default {
         {
           id: "1da71c33-6bb4-4ba0-9f04-8c55a132df79",
           titulo: "1984",
-          isbn: "9780155658110",
+          ISBN: "9780155658110",
           categoria_id: "d3d9dcbf-63d8-4cce-a90b-d096a19eb470",
           editora_id: "77de8e74-3b89-432a-bf90-e9fd94e83057",
           quantidade: "302",
@@ -34,7 +34,7 @@ export default {
         {
           id: "7576dc1a-9815-4b1c-9b9a-91416f76070a",
           titulo: "Moby Dick",
-          isbn: "9780393972832",
+          ISBN: "9780393972832",
           categoria_id: "4b7cde92-b7f5-4775-84e8-9e6b8ab2489b",
           editora_id: "a0d8a08e-92ff-4d49-bcf8-3ec68d0495e7",
           quantidade: "245",
@@ -43,7 +43,7 @@ export default {
         {
           id: "77902653-9726-4977-9367-1000a3c2181a",
           titulo: "A Divina Comédia",
-          isbn: "9781607109914",
+          ISBN: "9781607109914",
           categoria_id: "5e87edce-1a2b-4600-adef-df88f107b4fc",
           editora_id: "7bed718e-0849-4e3c-acfa-1f77af04395d",
           quantidade: "107",
@@ -134,7 +134,7 @@ export default {
             <tr v-for="livro in livros" :key="livro.id">
               <td>{{ livro.id }}</td>
               <td>{{ livro.titulo }}</td>
-              <td>{{ livro.isbn }}</td>
+              <td>{{ livro.ISBN }}</td>
               <td>{{ livro.categoria_id }}</td>
               <td>{{ livro.editora_id }}</td>
               <td>{{ livro.quantidade }}</td>

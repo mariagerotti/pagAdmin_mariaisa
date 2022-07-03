@@ -140,8 +140,10 @@ export default {
               <td>{{ livro.quantidade }}</td>
               <td>{{ livro.preco }}</td>
               <td>
-                <button>editar</button>
-                <button @click="excluir(livro)">excluir</button>
+                <div class="edit-btn">
+                  <button>editar</button>
+                  <button @click="excluir(livro)">excluir</button>
+                </div>
               </td>
             </tr>
           </tbody>
@@ -225,7 +227,6 @@ select {
   transition: all 0.3s;
 }
 
-
 ::-webkit-input-placeholder {
   color: #474544;
 }
@@ -244,7 +245,8 @@ select {
   color: #474544;
 }
 
-#save-btn {
+#save-btn,
+.edit-btn button {
   background: none;
   border: solid 2px #474544;
   color: #474544;
@@ -264,6 +266,16 @@ select {
 #save-btn:hover {
   background: #474544;
   color: #f2f3eb;
+}
+
+.edit-btn button:hover {
+  background: #474544;
+  color: #f2f3eb;
+}
+
+.edit-btn button {
+  padding: 8%;
+  margin: 3px;
 }
 
 #save-btn {

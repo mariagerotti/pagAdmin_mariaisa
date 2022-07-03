@@ -80,8 +80,10 @@ export default {
               <td>{{ categoria.id }}</td>
               <td>{{ categoria.descrição }}</td>
               <td>
-                <button>editar</button>
-                <button @click="excluir(categoria)">excluir</button>
+                <div class="edit-btn">
+                  <button>editar</button>
+                  <button @click="excluir(livro)">excluir</button>
+                </div>
               </td>
             </tr>
           </tbody>

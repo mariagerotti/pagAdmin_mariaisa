@@ -76,8 +76,10 @@ export default {
               <td>{{ autor.id }}</td>
               <td>{{ autor.nome }}</td>
               <td>
-                <button>editar</button>
-                <button @click="excluir(autor)">excluir</button>
+                <div class="edit-btn">
+                  <button>editar</button>
+                  <button @click="excluir(livro)">excluir</button>
+                </div>
               </td>
             </tr>
           </tbody>

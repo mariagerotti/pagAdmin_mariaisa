@@ -6,23 +6,23 @@ export default {
       autor: [
         {
           id: "01986caa-0a42-4eef-9d11-25c77fd98df1",
-          nome: "O Homem de Giz",
+          nome: "Machado de Assis",
         },
         {
           id: "fd358753-5c5b-458b-afe4-c321742f6b86",
-          nome: "Orgulho e Preconceito",
+          nome: "William Shakespeare",
         },
         {
           id: "1da71c33-6bb4-4ba0-9f04-8c55a132df79",
-          nome: "1984",
+          nome: "Stephen King",
         },
         {
           id: "7576dc1a-9815-4b1c-9b9a-91416f76070a",
-          nome: "Moby Dick",
+          nome: "George Orwell",
         },
         {
           id: "77902653-9726-4977-9367-1000a3c2181a",
-          nome: "A Divina Comédia",
+          nome: "Clarice Lispector",
         },
       ],
       novo_autor: {
@@ -61,7 +61,7 @@ export default {
           v-model="novo_autor.nome"
           placeholder="Nome do Autor"
         />
-        <button @click="salvar" id="save-btn">Salvar</button>
+        <button @click="salvar" id="save-btn">salvar</button>
       </div>
       <div class="list-books">
         <table>

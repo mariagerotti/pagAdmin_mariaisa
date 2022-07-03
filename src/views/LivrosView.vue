@@ -115,7 +115,7 @@ export default {
           placeholder="Preço"
           v-model="novo_livro.preco"
         />
-        <button @click="salvar" id="save-btn">Salvar</button>
+        <button @click="salvar" id="save-btn">salvar</button>
       </div>
       <div class="list-books">
         <table>
@@ -152,39 +152,6 @@ export default {
 </template>
 
 <style>
-/*.list-books {
-  display: flex;
-  justify-content: center;
-}
-.list-books table {
-  margin: 0 auto;
-  border-collapse: collapse;
-}
-table tr td {
-  border: 1px solid rgb(211, 211, 211);
-  padding: 10px;
-}
-
-.form-input input {
-  border-radius: 7px;
-  background-color: #f3f3f3;
-  
- 
-  justify-content: center;
-}
-
-input{
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 100;
-  font-size: 18px;
-  text-align: center;
-}
-
-button {
-  border-radius: 5px;
-}*/
-
 body {
   background: #f2f3eb;
 }
@@ -214,7 +181,7 @@ input {
   border: solid 3px #474544;
   padding: 2%;
   max-width: 768px;
-  margin: 60px auto;
+  margin: 40px auto;
   position: relative;
 }
 
@@ -225,6 +192,7 @@ form {
 
 h1 {
   color: #474544;
+  margin-top: 2%;
   font-size: 32px;
   font-weight: 700;
   letter-spacing: 7px;
@@ -232,16 +200,8 @@ h1 {
   text-transform: uppercase;
 }
 
-.underline {
-  border-bottom: solid 2px #474544;
-  margin: -0.512em auto;
-  width: 80px;
-}
-
 input[type="text"],
-[type="email"],
-select,
-textarea {
+select {
   background: none;
   border: none;
   border-bottom: solid 2px #474544;
@@ -265,14 +225,6 @@ textarea {
   transition: all 0.3s;
 }
 
-.name {
-  float: left;
-  width: 45%;
-}
-
-.subject {
-  width: 100%;
-}
 
 ::-webkit-input-placeholder {
   color: #474544;
@@ -298,12 +250,10 @@ textarea {
   color: #474544;
   cursor: pointer;
   display: inline-block;
-
   font-size: 0.875em;
   font-weight: bold;
   outline: none;
   padding: 20px 35px;
-  text-transform: uppercase;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -316,15 +266,7 @@ textarea {
   color: #f2f3eb;
 }
 
-.underline {
-  width: 68px;
-}
-
-#form_button {
+#save-btn {
   padding: 15px 25px;
-}
-
-.underline {
-  width: 53px;
 }
 </style>

@@ -6,28 +6,28 @@ export default {
       editora: [
         {
           id: "01986caa-0a42-4eef-9d11-25c77fd98df1",
-          nome: "O Homem de Giz",
-          site: "9783442489398",
+          nome: "DarkSide",
+          site: "https://www.darksidebooks.com.br/",
         },
         {
           id: "fd358753-5c5b-458b-afe4-c321742f6b86",
-          nome: "Orgulho e Preconceito",
-          site: "9783959390859",
+          nome: "Moderna",
+          site: "https://www.moderna.com.br/",
         },
         {
           id: "1da71c33-6bb4-4ba0-9f04-8c55a132df79",
-          nome: "1984",
-          site: "9780155658110",
+          nome: "Draco",
+          site: "https://editoradraco.com/",
         },
         {
           id: "7576dc1a-9815-4b1c-9b9a-91416f76070a",
-          nome: "Moby Dick",
-          site: "9780393972832",
+          nome: "Arqueiro",
+          site: "https://www.editoraarqueiro.com.br/",
         },
         {
           id: "77902653-9726-4977-9367-1000a3c2181a",
-          nome: "A Divina Comédia",
-          site: "9781607109914",
+          nome: "FTD",
+          site: "https://ftd.com.br/",
         },
       ],
       nova_editora: {
@@ -64,7 +64,7 @@ export default {
       <div class="form-input">
         <input type="text" v-model="nova_editora.nome" placeholder="Nome" />
         <input type="text" v-model="nova_editora.site" placeholder="Site" />
-        <button @click="salvar" id="save-btn">Salvar</button>
+        <button @click="salvar" id="save-btn">salvar</button>
       </div>
       <div class="list-books">
         <table>

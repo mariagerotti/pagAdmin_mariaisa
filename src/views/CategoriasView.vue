@@ -53,6 +53,7 @@ export default {
 <template>
   <main>
     <div class="container">
+      <h1>Seção Categorias</h1>
       <div class="form-input">
         <input
           type="text"

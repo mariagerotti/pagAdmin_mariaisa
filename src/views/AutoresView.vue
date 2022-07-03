@@ -54,6 +54,7 @@ export default {
 <template>
   <main>
     <div class="container">
+      <h1>Seção Autores</h1>
       <div class="form-input">
         <input
           type="text"

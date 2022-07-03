@@ -4,7 +4,6 @@
       <div class="card">
         <h2>Monetização</h2>
         <p>Configure a monetização</p>
-        <img class="image" src="" alt="livro" />
         <div class="btnlivro">
           <button type="button" class="btn btn-outline-danger">Excluir</button>
         </div>
@@ -13,7 +12,6 @@
       <div class="card">
         <h2>Artigos</h2>
         <p>Crie e edite artigos</p>
-        <img class="image" src="" alt="livro" />
         <div class="btnlivro">
           <button type="button" class="btn btn-outline-danger">Excluir</button>
         </div>
@@ -22,7 +20,6 @@
       <div class="card">
         <h2>Monetização</h2>
         <p>Configure a monetização</p>
-        <img class="image" src="" alt="livro" />
         <div class="btnlivro">
           <button type="button" class="btn btn-outline-danger">Excluir</button>
         </div>
@@ -31,7 +28,6 @@
       <div class="card">
         <h2>Monetização</h2>
         <p>Configure a monetização</p>
-        <img class="image" src="" alt="livro" />
         <div class="btnlivro">
           <button type="button" class="btn btn-outline-danger">Excluir</button>
         </div>
@@ -40,7 +36,6 @@
       <div class="card">
         <h2>Artigos</h2>
         <p>Crie e edite artigos</p>
-        <img class="image" src="" alt="livro" />
         <div class="btnlivro">
           <button type="button" class="btn btn-outline-danger">Excluir</button>
         </div>
@@ -49,7 +44,6 @@
       <div class="card">
         <h2>Monetização</h2>
         <p>Configure a monetização</p>
-        <img class="image" src="" alt="livro" />
         <div class="btnlivro">
           <button type="button" class="btn btn-outline-danger">Excluir</button>
         </div>
@@ -58,7 +52,6 @@
       <div class="card">
         <h2>Artigos</h2>
         <p>Crie e edite artigos</p>
-        <img class="image" src="" alt="livro" />
         <div class="btnlivro">
           <button type="button" class="btn btn-outline-danger">Excluir</button>
         </div>
@@ -67,7 +60,6 @@
       <div class="card">
         <h2>Artigos</h2>
         <p>Crie e edite artigos</p>
-        <img class="image" src="" alt="livro" />
         <div class="btnlivro">
           <button type="button" class="btn btn-outline-danger">Excluir</button>
         </div>

@@ -60,6 +60,7 @@ export default {
 <template>
   <main>
     <div class="container">
+      <h1>Seção Editoras</h1>
       <div class="form-input">
         <input type="text" v-model="nova_editora.nome" placeholder="Nome" />
         <input type="text" v-model="nova_editora.site" placeholder="Site" />

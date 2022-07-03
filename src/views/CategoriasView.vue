@@ -60,7 +60,7 @@ export default {
           v-model="nova_categoria.descrição"
           placeholder="Descrição"
         />
-        <button @click="salvar">Salvar</button>
+        <button @click="salvar" id="save-btn">Salvar</button>
       </div>
       <div class="list-books">
         <table>

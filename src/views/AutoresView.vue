@@ -61,7 +61,7 @@ export default {
           v-model="novo_autor.nome"
           placeholder="Nome do Autor"
         />
-        <button @click="salvar">Salvar</button>
+        <button @click="salvar" id="save-btn">Salvar</button>
       </div>
       <div class="list-books">
         <table>

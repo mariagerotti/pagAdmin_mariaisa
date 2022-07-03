@@ -64,7 +64,7 @@ export default {
       <div class="form-input">
         <input type="text" v-model="nova_editora.nome" placeholder="Nome" />
         <input type="text" v-model="nova_editora.site" placeholder="Site" />
-        <button @click="salvar">Salvar</button>
+        <button @click="salvar" id="save-btn">Salvar</button>
       </div>
       <div class="list-books">
         <table>
@@ -91,26 +91,3 @@ export default {
     </div>
   </main>
 </template>
-
-<style>
-.list-books {
-  display: flex;
-  justify-content: center;
-}
-.list-books table {
-  margin: 0 auto;
-  border-collapse: collapse;
-}
-table tr td {
-  border: 1px solid rgb(211, 211, 211);
-  padding: 10px;
-}
-
-.form-input input {
-  border-radius: 7px;
-}
-
-button {
-  border-radius: 5px;
-}
-</style>

@@ -115,7 +115,7 @@ export default {
           placeholder="Preço"
           v-model="novo_livro.preco"
         />
-        <button @click="salvar">Salvar</button>
+        <button @click="salvar" id="save-btn">Salvar</button>
       </div>
       <div class="list-books">
         <table>
@@ -185,21 +185,23 @@ button {
   border-radius: 5px;
 }*/
 
-
 body {
-  background: #F2F3EB;
+  background: #f2f3eb;
 }
 
 button {
   overflow: visible;
 }
 
-button, select {
+button,
+select {
   text-transform: none;
 }
 
-button, input, select, textarea {
-  color: #5A5A5A;
+button,
+input,
+select {
+  color: #5a5a5a;
   font: inherit;
   margin: 0;
 }
@@ -208,12 +210,9 @@ input {
   line-height: normal;
 }
 
-textarea {
-  overflow: auto;
-}
-
-#container {
+.form-input {
   border: solid 3px #474544;
+  padding: 2%;
   max-width: 768px;
   margin: 60px auto;
   position: relative;
@@ -239,13 +238,15 @@ h1 {
   width: 80px;
 }
 
-
-input[type='text'], [type='email'], select, textarea {
+input[type="text"],
+[type="email"],
+select,
+textarea {
   background: none;
   border: none;
   border-bottom: solid 2px #474544;
   color: #474544;
-  font-size: 1.000em;
+  font-size: 1em;
   font-weight: 400;
   letter-spacing: 1px;
   margin: 0em 0 1.875em 0;
@@ -264,25 +265,20 @@ input[type='text'], [type='email'], select, textarea {
   transition: all 0.3s;
 }
 
-
-
 .name {
   float: left;
   width: 45%;
 }
 
-
-
 .subject {
   width: 100%;
 }
-
 
 ::-webkit-input-placeholder {
   color: #474544;
 }
 
-:-moz-placeholder { 
+:-moz-placeholder {
   color: #474544;
   opacity: 1;
 }
@@ -296,13 +292,13 @@ input[type='text'], [type='email'], select, textarea {
   color: #474544;
 }
 
-#form_button {
+#save-btn {
   background: none;
   border: solid 2px #474544;
   color: #474544;
   cursor: pointer;
   display: inline-block;
-  font-family: 'Helvetica', Arial, sans-serif;
+
   font-size: 0.875em;
   font-weight: bold;
   outline: none;
@@ -315,23 +311,20 @@ input[type='text'], [type='email'], select, textarea {
   transition: all 0.3s;
 }
 
-#form_button:hover {
+#save-btn:hover {
   background: #474544;
-  color: #F2F3EB;
+  color: #f2f3eb;
 }
 
-  
-  .underline {
-    width: 68px;
-  }
-  
-  #form_button {
-    padding: 15px 25px;
-  }
+.underline {
+  width: 68px;
+}
 
-  
-  .underline {
-    width: 53px;
-  }
+#form_button {
+  padding: 15px 25px;
+}
 
+.underline {
+  width: 53px;
+}
 </style>

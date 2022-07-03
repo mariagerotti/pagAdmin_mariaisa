@@ -102,10 +102,13 @@ export default {
           v-model="novo_livro.editora_id"
           placeholder="Editora_ID"
         />
+        <label for="quantidade">Quantidade</label>
         <input
           type="number"
-          v-model="novo_livro.quantidade"
+          id="quantidade"
+          name="quantidade"
           placeholder="Quantidade"
+          v-model="novo_livro.quantidade"
         />
         <label for="dinheiro">R$</label
         ><input
@@ -203,6 +206,7 @@ h1 {
 }
 
 input[type="text"],
+input[type="number"],
 select {
   background: none;
   border: none;
@@ -225,24 +229,6 @@ select {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-::-webkit-input-placeholder {
-  color: #474544;
-}
-
-:-moz-placeholder {
-  color: #474544;
-  opacity: 1;
-}
-
-::-moz-placeholder {
-  color: #474544;
-  opacity: 1;
-}
-
-:-ms-input-placeholder {
-  color: #474544;
 }
 
 #save-btn,

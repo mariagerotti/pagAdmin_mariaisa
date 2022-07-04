@@ -220,8 +220,9 @@ h1 {
 }
 
 input[type="text"],
-input[type="number"] {
-  background: none;
+input[type="number"],
+select {
+   background: none;
   border: none;
   border-bottom: solid 2px #474544;
   color: #474544;
@@ -243,6 +244,7 @@ input[type="number"] {
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 
 #save-btn,
 .edit-btn button {

@@ -245,7 +245,6 @@ select {
   transition: all 0.3s;
 }
 
-
 #save-btn,
 .edit-btn button {
   background: none;

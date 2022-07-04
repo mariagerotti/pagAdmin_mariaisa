@@ -1,4 +1,5 @@
 <template>
+  <h1>Bem-Vindo(a)!</h1>
   <main class="card-books">
     <div class="row">
       <div class="card">

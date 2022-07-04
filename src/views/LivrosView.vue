@@ -92,16 +92,30 @@ export default {
       <div class="form-input">
         <input type="text" v-model="novo_livro.titulo" placeholder="título" />
         <input type="text" v-model="novo_livro.ISBN" placeholder="ISBN" />
-        <input
-          type="text"
+
+        <label for="categoria"></label>
+        <select
+          name="categoria"
+          id="categoria"
           v-model="novo_livro.categoria_id"
-          placeholder="Categoria_ID"
-        />
-        <input
-          type="text"
-          v-model="novo_livro.editora_id"
-          placeholder="Editora_ID"
-        />
+        >
+          <option class="disabled" value="" disabled selected>Categoria</option>
+          <option value="Ficcão">Ficção</option>
+          <option value="Fantasia">Fantasia</option>
+          <option value="Filosofia">Filosofia</option>
+          <option value="Biografia">Biografia</option>
+        </select>
+
+        <label for="editora"></label>
+        <select name="editora" id="editora" v-model="novo_livro.editora_id">
+          <option value="" disabled selected>Editora</option>
+          <option value="DarkSide">DarkSide</option>
+          <option value="Moderna">Moderna</option>
+          <option value="Draco">Draco</option>
+          <option value="Arqueiro">Arqueiro</option>
+          <option value="FTD">FTD</option>
+        </select>
+
         <label for="quantidade">Quantidade</label>
         <input
           type="number"
@@ -206,8 +220,7 @@ h1 {
 }
 
 input[type="text"],
-input[type="number"],
-select {
+input[type="number"] {
   background: none;
   border: none;
   border-bottom: solid 2px #474544;

@@ -1,12 +1,12 @@
 import axios from 'axios';
-export default class CategoriasApi {
+export default class AutoressApi {
   async buscarTodasAsCategorias() {
     const response = await axios.get('http://localhost:4000/categorias');
     return response.data;
   }
 
   async buscarCategorias(id) {
-    const response = await axios.get(`http://localhost:4000/categorias/${id}`);
+    const response = await axios.get(`http://localhost:4000/times/${id}`);
     return response.data;
   }
 

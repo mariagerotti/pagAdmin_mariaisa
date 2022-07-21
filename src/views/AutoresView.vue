@@ -1,51 +1,32 @@
 <script>
-
+import AutoresApi from "@/api/Autores.js";
+const autoresApi = new AutoresApi();
 export default {
   data() {
     return {
-      autor: [
-        {
-          id: "01986caa-0a42-4eef-9d11-25c77fd98df1",
-          nome: "Machado de Assis",
-        },
-        {
-          id: "fd358753-5c5b-458b-afe4-c321742f6b86",
-          nome: "William Shakespeare",
-        },
-        {
-          id: "1da71c33-6bb4-4ba0-9f04-8c55a132df79",
-          nome: "Stephen King",
-        },
-        {
-          id: "7576dc1a-9815-4b1c-9b9a-91416f76070a",
-          nome: "George Orwell",
-        },
-        {
-          id: "77902653-9726-4977-9367-1000a3c2181a",
-          nome: "Clarice Lispector",
-        },
-      ],
-      novo_autor: {
-        id: "",
-        nome: "",
-      },
+      autor: {},
+      autores: [],
     };
   },
+  async created() {
+    this.autores = await autoresApi.buscarTodosOsAutores();
+  },
   methods: {
-    salvar() {
-      if (this.novo_autor.nome !== "") {
-        this.novo_autor.id = uuidv4();
-        this.autor.push(this.novo_autor);
-        this.novo_autor = {
-          id: "",
-          nome: "",
-
-        };
+    async salvar() {
+      if (this.autor.id) {
+        await autoresApi.atualizarAutores(this.autor);
+      } else {
+        await autoresApi.adicionarAutores(this.autor);
       }
+      this.autores = await autoresApi.buscarTodosOsAutores();
+      this.autor = {};
     },
-    excluir(autor) {
-      const indice = this.autor.indexOf(autor);
-      this.autor.splice(indice, 1);
+    async excluir(autor) {
+      await autoresApi.excluirAutor(autor.id);
+      this.autores = await autoresApi.buscarTodosOsAutores();
+    },
+    editar(autor) {
+      Object.assign(this.autor, autor);
     },
   },
 };
@@ -56,11 +37,7 @@ export default {
     <div class="container">
       <h1>Seção Autores</h1>
       <div class="form-input">
-        <input
-          type="text"
-          v-model="novo_autor.nome"
-          placeholder="Nome do Autor"
-        />
+        <input type="text" v-model="autor.nome" placeholder="Nome do Autor" />
         <button @click="salvar" id="save-btn">salvar</button>
       </div>
       <div class="list-books">
@@ -72,13 +49,13 @@ export default {
             </tr>
           </thead>
           <tbody>
-            <tr v-for="autor in autor" :key="autor.id">
+            <tr v-for="autor in autores" :key="autor.id">
               <td>{{ autor.id }}</td>
               <td>{{ autor.nome }}</td>
               <td>
                 <div class="edit-btn">
-                  <button>editar</button>
-                  <button @click="excluir(livro)">excluir</button>
+                  <button @click="editar(autor)">editar</button>
+                  <button @click="excluir(autor)">excluir</button>
                 </div>
               </td>
             </tr>

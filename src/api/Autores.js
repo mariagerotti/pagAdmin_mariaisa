@@ -1,29 +1,29 @@
 import axios from 'axios';
-export default class AutoressApi {
-  async buscarTodasAsCategorias() {
-    const response = await axios.get('http://localhost:4000/categorias');
+export default class AutoresApi {
+  async buscarTodosOsAutores() {
+    const response = await axios.get('http://localhost:4000/autores/');
     return response.data;
   }
 
-  async buscarCategorias(id) {
-    const response = await axios.get(`http://localhost:4000/times/${id}`);
+  async buscarAutores(id) {
+    const response = await axios.get(`http://localhost:4000/autores/${id}`);
     return response.data;
   }
 
-  async adicionarCategorias(categorias) {
-    const response = await axios.post('http://localhost:4000/categorias', categorias);
+  async adicionarAutores(autores) {
+    const response = await axios.post('http://localhost:4000/autores', autores);
     return response.data;
   }
 
-  async excluirCategorias(id) {
-    const response = await axios.delete(`http://localhost:4000/categorias/${id}`);
+  async excluirAutores(id) {
+    const response = await axios.delete(`http://localhost:4000/autores/${id}`);
     return response.data;
   }
 
-  async atualizarCategorias(categorias) {
+  async atualizarAutores(autores) {
     const response = await axios.put(
-      `http://localhost:4000/categorias/${categorias.id}`,
-      categorias,
+      `http://localhost:4000/autores/${autores.id}`,
+      autores,
     );
     return response.data;
   }

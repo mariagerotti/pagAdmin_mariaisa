@@ -1,85 +1,32 @@
 <script>
-import axios from 'axios';
+import LivrosApi from "@/api/Livros.js";
+const livrosApi = new LivrosApi();
 export default {
   data() {
     return {
-      livros: [
-        {
-          id: "01986caa-0a42-4eef-9d11-25c77fd98df1",
-          titulo: "O Homem de Giz",
-          ISBN: "9783442489398",
-          categoria_id: "cd39786b-0a5c-4378-8dbb-ba15f266cb5b",
-          editora_id: "dc40599e-56e5-492b-8b96-26a2a39ce7f1",
-          quantidade: "90",
-          preco: "R$31,00",
-        },
-        {
-          id: "fd358753-5c5b-458b-afe4-c321742f6b86",
-          titulo: "Orgulho e Preconceito",
-          ISBN: "9783959390859",
-          categoria_id: "1a14add5-c7ff-41e4-9422-1f2bbe6dd129",
-          editora_id: "9f3ce3be-8168-4daf-a374-f71891a880f5",
-          quantidade: "68",
-          preco: "R$37,00",
-        },
-        {
-          id: "1da71c33-6bb4-4ba0-9f04-8c55a132df79",
-          titulo: "1984",
-          ISBN: "9780155658110",
-          categoria_id: "d3d9dcbf-63d8-4cce-a90b-d096a19eb470",
-          editora_id: "77de8e74-3b89-432a-bf90-e9fd94e83057",
-          quantidade: "302",
-          preco: "R$21,50",
-        },
-        {
-          id: "7576dc1a-9815-4b1c-9b9a-91416f76070a",
-          titulo: "Moby Dick",
-          ISBN: "9780393972832",
-          categoria_id: "4b7cde92-b7f5-4775-84e8-9e6b8ab2489b",
-          editora_id: "a0d8a08e-92ff-4d49-bcf8-3ec68d0495e7",
-          quantidade: "245",
-          preco: "R$72,80",
-        },
-        {
-          id: "77902653-9726-4977-9367-1000a3c2181a",
-          titulo: "A Divina Comédia",
-          ISBN: "9781607109914",
-          categoria_id: "5e87edce-1a2b-4600-adef-df88f107b4fc",
-          editora_id: "7bed718e-0849-4e3c-acfa-1f77af04395d",
-          quantidade: "107",
-          preco: "R$120,00",
-        },
-      ],
-      novo_livro: {
-        id: "",
-        titulo: "",
-        ISBN: "",
-        categoria_id: "",
-        editora_id: "",
-        quantidade: 0,
-        preco: 0,
-      },
+      livro: {},
+      livros: [],
     };
   },
+  async created() {
+    this.livros = await livrosApi.buscarTodosOsLivros();
+  },
   methods: {
-    salvar() {
-      if (this.novo_livro.titulo !== "") {
-        this.novo_livro.id = uuidv4();
-        this.livros.push(this.novo_livro);
-        this.novo_livro = {
-          id: "",
-          titulo: "",
-          ISBN: "",
-          categoria_id: "",
-          editora_id: "",
-          quantidade: 0,
-          preco: 0,
-        };
+    async salvar() {
+      if (this.livro.id) {
+        await livrosApi.atualizarLivro(this.livro);
+      } else {
+        await livrosApi.adicionarLivro(this.livro);
       }
+      this.livros = await livrosApi.buscarTodosOsTimes();
+      this.livro = {};
     },
-    excluir(livros) {
-      const indice = this.livros.indexOf(livros);
-      this.livros.splice(indice, 1);
+    async excluir(time) {
+      await livrosApi.excluirTime(time.id);
+      this.times = await livrosApi.buscarTodosOsTimes();
+    },
+    editar(time) {
+      Object.assign(this.time, time);
     },
   },
 };

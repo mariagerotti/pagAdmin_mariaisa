@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 export default class EditorasApi {
   async buscarTodasAsEditoras() {
-    const response = await axios.get('http://localhost:4000/editoras');
+    const response = await axios.get("http://localhost:4000/editoras");
     return response.data;
   }
 
@@ -11,7 +11,10 @@ export default class EditorasApi {
   }
 
   async adicionarEditora(editora) {
-    const response = await axios.post('http://localhost:4000/editoras', editora);
+    const response = await axios.post(
+      "http://localhost:4000/editoras",
+      editora
+    );
     return response.data;
   }
 
@@ -23,7 +26,7 @@ export default class EditorasApi {
   async atualizarEditora(editora) {
     const response = await axios.put(
       `http://localhost:4000/editoras/${editora.id}`,
-      editora,
+      editora
     );
     return response.data;
   }

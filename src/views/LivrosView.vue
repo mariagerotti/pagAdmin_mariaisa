@@ -1,35 +1,35 @@
 <script>
 import LivrosApi from "@/api/Livros.js";
 const livrosApi = new LivrosApi();
-export default {
-  data() {
-    return {
-      livro: {},
-      livros: [],
-    };
-  },
-  async created() {
-    this.livros = await livrosApi.buscarTodosOsLivros();
-  },
-  methods: {
-    async salvar() {
-      if (this.livro.id) {
-        await livrosApi.atualizarLivro(this.livro);
-      } else {
-        await livrosApi.adicionarLivro(this.livro);
-      }
-      this.livros = await livrosApi.buscarTodosOsTimes();
-      this.livro = {};
+import EditorasApi from "@/api/Editoras.js";
+const editorasApi = new EditorasApi();
+import CategoriasApi from "@/api/Categorias.js";
+const categoriasApi = new CategoriasApi();
+ export default {
+   data() {
+     return {
+       livros: [],
+       livro: {},
+       editoras:[],
+       categorias:[],
+     };
+   },
+   async created(){
+    await this.buscarTodosOsLivros();
+    this.editoras = await editorasApi.buscarTodasAsEditoras();
+    this.categorias = await categoriasApi.buscarTodasAsCategorias();
+   },
+   methods: {
+    async buscarTodosOsLivros(){
+      const resposta = await axios.get("http://localhost:4000/livros?expand=time");
+      this.livros = resposta.data;
     },
-    async excluir(time) {
-      await livrosApi.excluirTime(time.id);
-      this.times = await livrosApi.buscarTodosOsTimes();
-    },
-    editar(time) {
-      Object.assign(this.time, time);
+    async salvar(){
+      await axios.post("http://localhost:4000/livros", this.livro);
+      await this.buscarTodosOsLivros();
     },
   },
-};
+ };
 </script>
 
 <template>
@@ -37,14 +37,14 @@ export default {
     <div class="container">
       <h1>Seção Livros</h1>
       <div class="form-input">
-        <input type="text" v-model="novo_livro.titulo" placeholder="título" />
-        <input type="text" v-model="novo_livro.ISBN" placeholder="ISBN" />
+        <input type="text" v-model="livro.titulo" placeholder="título" />
+        <input type="text" v-model="livro.ISBN" placeholder="ISBN" />
 
         <label for="categoria"></label>
         <select
           name="categoria"
           id="categoria"
-          v-model="novo_livro.categoria_id"
+          v-model="livro.categoria"
         >
           <option class="disabled" value="" disabled selected>Categoria</option>
           <option value="Ficcão">Ficção</option>
@@ -54,7 +54,7 @@ export default {
         </select>
 
         <label for="editora"></label>
-        <select name="editora" id="editora" v-model="novo_livro.editora_id">
+        <select name="editora" id="editora" v-model="livro.editora">
           <option value="" disabled selected>Editora</option>
           <option value="DarkSide">DarkSide</option>
           <option value="Moderna">Moderna</option>
@@ -69,7 +69,7 @@ export default {
           id="quantidade"
           name="quantidade"
           placeholder="Quantidade"
-          v-model="novo_livro.quantidade"
+          v-model="livro.quantidade"
         />
         <label for="dinheiro">R$</label
         ><input
@@ -77,7 +77,7 @@ export default {
           id="dinheiro"
           name="dinheiro"
           placeholder="Preço"
-          v-model="novo_livro.preco"
+          v-model="livro.preco"
         />
         <button @click="salvar" id="save-btn">salvar</button>
       </div>
@@ -99,13 +99,13 @@ export default {
               <td>{{ livro.id }}</td>
               <td>{{ livro.titulo }}</td>
               <td>{{ livro.ISBN }}</td>
-              <td>{{ livro.categoria_id }}</td>
-              <td>{{ livro.editora_id }}</td>
+              <td>{{ livro.categoria }}</td>
+              <td>{{ livro.editora }}</td>
               <td>{{ livro.quantidade }}</td>
               <td>{{ livro.preco }}</td>
               <td>
                 <div class="edit-btn">
-                  <button>editar</button>
+                  <button @click="editar(livro)">editar</button>
                   <button @click="excluir(livro)">excluir</button>
                 </div>
               </td>

@@ -1,35 +1,53 @@
 <script>
-import LivrosApi from "@/api/Livros.js";
+import LivrosApi from "@/api/livros.js";
+import AutoresApi from "@/api/autores.js";
+import CategoriasApi from "@/api/categorias.js";
+import EditorasApi from "@/api/editoras.js";
 const livrosApi = new LivrosApi();
-import EditorasApi from "@/api/Editoras.js";
-const editorasApi = new EditorasApi();
-import CategoriasApi from "@/api/Categorias.js";
+const autoresApi = new AutoresApi();
 const categoriasApi = new CategoriasApi();
- export default {
-   data() {
-     return {
-       livros: [],
-       livro: {},
-       editoras:[],
-       categorias:[],
-     };
-   },
-   async created(){
-    await this.buscarTodosOsLivros();
-    this.editoras = await editorasApi.buscarTodasAsEditoras();
+const editorasApi = new EditorasApi();
+export default {
+  data() {
+    return {
+      livro: {},
+      livros: [],
+      categoria: {},
+      categorias: [],
+      editora: {},
+      editoras: [],
+      autor: {},
+      autores: [],
+    };
+  },
+  async created() {
+    this.livros = await livrosApi.buscarTodosOsLivros();
+    this.autores = await autoresApi.buscarTodosOsAutores();
     this.categorias = await categoriasApi.buscarTodasAsCategorias();
-   },
-   methods: {
-    async buscarTodosOsLivros(){
-      const resposta = await axios.get("http://localhost:4000/livros?expand=time");
-      this.livros = resposta.data;
+    this.editoras = await editorasApi.buscarTodasAsEditoras();
+  },
+  methods: {
+    async salvar() {
+      if (this.livro.id) {
+        await livrosApi.atualizarLivro(this.livro);
+      } else {
+        await livrosApi.adicionarLivro(this.livro);
+      }
+      this.livros = await livrosApi.buscarTodosOsLivros();
+      this.categorias = await categoriasApi.buscarTodasAsCategorias();
+      this.editoras = await editorasApi.buscarTodasAsEditoras();
+      this.autores = await autoresApi.buscarTodosOsAutores();
+      this.livro = {};
     },
-    async salvar(){
-      await axios.post("http://localhost:4000/livros", this.livro);
-      await this.buscarTodosOsLivros();
+    async excluir(livro) {
+      await livrosApi.excluirLivro(livro.id);
+      this.livros = await livrosApi.buscarTodosOsLivros();
+    },
+    editar(livro) {
+      Object.assign(this.livro, livro);
     },
   },
- };
+};
 </script>
 
 <template>

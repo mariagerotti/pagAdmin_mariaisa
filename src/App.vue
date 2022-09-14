@@ -12,5 +12,4 @@ import FooterComp from "@/components/template/FooterComp.vue";
 
 <style>
 @import "@/assets/base.css";
-
 </style>

@@ -1,8 +1,8 @@
 <script>
-import LivrosApi from "@/api/livros.js";
-import AutoresApi from "@/api/autores.js";
-import CategoriasApi from "@/api/categorias.js";
-import EditorasApi from "@/api/editoras.js";
+import LivrosApi from "@/api/Livros.js";
+import AutoresApi from "@/api/Autores.js";
+import CategoriasApi from "@/api/Categorias.js";
+import EditorasApi from "@/api/Editoras.js";
 const livrosApi = new LivrosApi();
 const autoresApi = new AutoresApi();
 const categoriasApi = new CategoriasApi();
@@ -59,11 +59,7 @@ export default {
         <input type="text" v-model="livro.ISBN" placeholder="ISBN" />
 
         <label for="categoria"></label>
-        <select
-          name="categoria"
-          id="categoria"
-          v-model="livro.categoria"
-        >
+        <select name="categoria" id="categoria" v-model="livro.categoria">
           <option class="disabled" value="" disabled selected>Categoria</option>
           <option value="Ficcão">Ficção</option>
           <option value="Fantasia">Fantasia</option>
@@ -187,7 +183,7 @@ h1 {
 input[type="text"],
 input[type="number"],
 select {
-   background: none;
+  background: none;
   border: none;
   border-bottom: solid 2px #474544;
   color: #474544;

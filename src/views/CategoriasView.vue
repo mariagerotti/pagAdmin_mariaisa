@@ -23,7 +23,7 @@ export default {
     },
     async excluir(categoria) {
       await categoriasApi.excluirCategoria(categoria.id);
-      this.categorias = await categoriasApi.bus();
+      this.categorias = await categoriasApi.buscarTodasAsCategorias();
     },
     editar(categoria) {
       Object.assign(this.categoria, categoria);

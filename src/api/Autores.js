@@ -15,7 +15,7 @@ export default class AutoresApi {
     return response.data;
   }
 
-  async excluirAutores(id) {
+  async excluirAutor(id) {
     const response = await axios.delete(`https://livraria-admin.herokuapp.com/autores/${id}`);
     return response.data;
   }
